@@ -30,3 +30,143 @@ h1, h2, h3 {
   font-family: 'Shippori Mincho B1', 'Noto Serif JP', serif;
   font-weight: 700;
 }
+
+/* ── Layout utilities ── */
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.site-nav {
+  display: flex;
+  gap: 0;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.grid-2-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.info-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.main-pad {
+  padding: 0 32px 80px;
+}
+
+.hero-title {
+  font-size: 52px;
+}
+
+.section-title {
+  font-size: 28px;
+}
+
+.hero-deco-text {
+  display: block;
+}
+
+/* ── Tablet (≤900px) ── */
+@media (max-width: 900px) {
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-title {
+    font-size: 40px;
+  }
+}
+
+/* ── Mobile (≤640px) ── */
+@media (max-width: 640px) {
+  .site-header-inner {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 0 0;
+  }
+
+  .site-nav {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .site-nav::-webkit-scrollbar { display: none; }
+
+  .site-nav button {
+    flex-shrink: 0;
+    padding: 12px 14px !important;
+    font-size: 12px !important;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .grid-2-menu {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-pad {
+    padding: 0 16px 60px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    letter-spacing: 2px !important;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .hero-pad {
+    padding: 40px 24px !important;
+  }
+
+  .hero-deco-text {
+    display: none;
+  }
+}
